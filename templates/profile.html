@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="../styles/estilosreg.css">
 </head>
 <body>
-    <div id="message">
-        <h1>User Profile</h1>
-        <p><strong>Username:</strong> <span id="username"></span></p>
-        <p><strong>Email:</strong> <span id="email"></span></p>
-        <p><strong>First Name:</strong> <span id="first_name"></span></p>
-        <p><strong>Last Name:</strong> <span id="last_name"></span></p>
-    </div>
-    
-    <button id="logout">Logout</button>
-    
-    <script src="profile.js"></script>
+    <h1>Registro de Usuario</h1>
+    <form id="registro-form" enctype="multipart/form-data">
+        <input type="text" id="nombre-usuario" placeholder="Nombre de usuario" required>
+        <input type="password" id="contrasena" placeholder="Contraseña" required>
+        <input type="email" id="correo-electronico" placeholder="Correo electrónico">
+        <label for="imagen-perfil" class="custom-file-upload">
+            Seleccione imagen de perfil
+        </label>
+        <input type="file" id="imagen-perfil" accept="image/*"title="Seleccione imagen de perfil" style="display: none;"> <!-- Agrega campo de carga de imagen -->
+        <img id="imagen-previa" src="#" alt="Vista previa de la imagen" style="display: none;">
+        <button type="submit">Registrarse</button>
+    </form>
+    <p><a href="login.html">Ir a Inicio de Sesión</a></p>
+
+    <script src="../scripts/profile.js"></script>
 </body>
 </html>
