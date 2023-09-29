@@ -1,4 +1,4 @@
-// Obtener referencia al campo de entrada y a la imagen previa
+//  Obtener referencia al campo de entrada y a la imagen previa
 const inputImagen = document.getElementById('imagen-perfil');
 const imagenPrevia = document.getElementById('imagen-previa');
 
@@ -18,40 +18,36 @@ inputImagen.addEventListener('change', function() {
         lector.readAsDataURL(inputImagen.files[0]);
     }
 });
-//------------------------------------------------------------------------------------------
+
 document.getElementById('registro-form').addEventListener('submit', function(event) {
-  event.preventDefault(); // Evitar el envío del formulario por defecto
+    event.preventDefault();
 
-  // Obtener los valores de los campos
-  var nombreUsuario = document.getElementById('nombre-usuario').value;
-  var contrasena = document.getElementById('contrasena').value;
-  var correoElectronico = document.getElementById('correo-electronico').value;
+    var nombreUsuario = document.getElementById('nombre-usuario').value;
+    var contrasena = document.getElementById('contrasena').value;
+    var correoElectronico = document.getElementById('correo-electronico').value;
+    var imagenPerfilInput = document.getElementById('imagen-perfil');
+    
+    var formData = new FormData();
+    formData.append('nombre_usuario', nombreUsuario);
+    formData.append('contrasena', contrasena);
+    formData.append('correo_electronico', correoElectronico);
+    formData.append('imagen_perfil', imagenPerfilInput.files[0]);
 
-  // Crear un objeto con los datos a enviar
-  var userData = {
-      "nombre_usuario": nombreUsuario,
-      "contrasena": contrasena,
-      "correo_electronico": correoElectronico,
-      "imagen_perfil": ""
-  };
-
-  // Realizar una solicitud POST a la URL del servidor
-  fetch('http://127.0.0.1:5000/usuarios/registrar', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(userData)
-  })
-  .then(function(response) {
-      if (response.ok) {
-          alert('Usuario registrado con éxito');
-          // Aquí puedes redirigir al usuario a otra página si lo deseas
-      } else {
-          alert('Error al registrar usuario');
-      }
-  })
-  .catch(function(error) {
-      console.error('Error:', error);
-  });
+    fetch('http://127.0.0.1:5000/usuarios/registrar', {
+        method: 'POST',
+        body: formData,
+        credentials: "include",
+    })
+    .then(function(response) {
+        if (response.ok) {
+            alert('Usuario registrado con éxito');
+            // Redirigir al usuario a la página de inicio de sesión
+            window.location.href = 'login.html';
+        } else {
+            alert('Error al registrar usuario');
+        }
+    })
+    .catch(function(error) {
+        console.error('Error:', error);
+    });
 });

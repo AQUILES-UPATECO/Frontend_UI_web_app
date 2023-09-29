@@ -7,24 +7,56 @@
 </head>
 <body>
     <div class="sidebar">
+        <h2>Servidores</h2>
         <div class="server-icon">
             <img src="../assets/servidor.png" alt="Icono de Servidores">
-            <span>Servidores</span>
+            <span>Mis Servidores</span>
         </div>
         <div class="add-server-icon">
             <img src="../assets/agregar.png" alt="Icono de Añadir Servidor">
             <span>Añadir Servidor</span>
         </div>
+        <div class="server-icon2">
+            <img src="../assets/servidor2.png" alt="Icono de Servidores">
+            <span>Otros Servidores</span>
+        </div>
+        <div class="server-icon2" id="cerrar-sesion">
+            <img src="../assets/cerrarsesion.png" alt="Icono de Servidores">
+            <span>Cerrar Sesión</span>
+        </div>
+        
         
         <div class="sidebar-icons">
             <div class="user-profile">
-                <img src="../assets/usuario.png" alt="Imagen de Usuario">
-                <p>Nombre de Usuario</p>
+                <img id="imagen_perfil" src="" alt="Imagen de Usuario">
+                <p id="nombre_usuario">Nombre de Usuario</p>
             </div>
         </div>
+        
     </div>
+    <div class="canales-sidebar" style="display: none;">
+        <h2>Canales</h2>
+        <div class="contenedorCanales">
+            <div class="canales-container"> <!-- Nuevo contenedor para los canales -->
+                <!-- Aquí se cargan los canales -->
+            </div>
+        </div>    
+        <div class="add-canales-icon">
+            <img src="../assets/agregar.png" alt="Icono de Añadir Canal">
+            <span>Añadir Canal</span>
+        </div> 
+        <div class="canales-salir" id="canales-salir">
+            <img src="../assets/salir.png" alt="Icono de Servidores">
+            <span>Salir de Canales</span>
+        </div>
+                
+    </div> 
     <div class="main-content">
+        <div id="mensaje-exito" style="display: none;">
+            <h3>has suscrito con éxito !!</h3> 
+        </div>
         <!-- Aquí van los servidores -->
     </div>
+    <script src="../scripts/main.js"></script>
 </body>
 </html>

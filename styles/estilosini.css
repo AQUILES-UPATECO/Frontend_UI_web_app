@@ -69,15 +69,47 @@ body, html {
     color: #fff;
   }
   
+  .server-icon2,
+  .add-server-icon2 {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    flex-direction: column;
+  }
+  
+  .server-icon2 img,
+  .add-server-icon2 img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+  
+  .server-icon2:hover,
+  .add-server-icon2:hover {
+    background-color: #6b065a;
+    border-radius: 5px;
+    color: #fff;
+  }
+  
   .main-content {
     border-radius: 6px;
     background-color: #383838;
+    background-image: url('../assets/fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     flex: 1;
     height: 97.5%;
     margin-left: 3px;
     margin-right: 3px;
-  }
-  
+    padding: 10px;
+    display: grid; /* Utiliza CSS Grid para el diseño */
+    grid-template-columns: repeat(3, 1fr); /* Divide en dos columnas de igual tamaño */
+    gap: 20px; /* Espacio entre los elementos */
+    overflow-y: auto; /* Agrega la barra de desplazamiento vertical cuando sea necesario */
+    max-height: 95vh; /* Establece una altura máxima antes de que aparezca la barra de desplazamiento */
+}
   /* Estilos para los sectores destacados */
   .server-icon:hover,
   .add-server-icon:hover {
@@ -85,3 +117,256 @@ body, html {
     border-radius: 5px;
     color: #fff;
   }
+
+  /* Estilos para el contenedor de servidor */
+.servidor-info {
+  text-align: center;
+  background-color: rgba(32, 32, 32, 0.60); /* Fondo con transparencia */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 10px; /* Espaciado interior para separar la información */
+  margin: 10px auto; /* Centra horizontalmente en main-content */
+  max-width: 400px; /* Máximo ancho para evitar que sea demasiado ancho */
+  color: rgb(255, 255, 255); /* Color de texto blanco */
+  cursor: pointer; /* Cambia el cursor al puntero al pasar el mouse */
+}
+/* Estilos para el hover del contenedor del servidor */
+.servidor-info:hover {
+  background-color: #101010a4; /* Cambia el color de fondo en hover */
+  color: #1e9dff; /* Cambia el color del texto en hover a blanco */
+}
+
+/* Estilos para el contenido dentro del contenedor del servidor */
+.servidor-info h3 {
+  font-size: 24px; /* Tamaño de fuente para el título */
+  margin-bottom: 10px; /* Espaciado inferior para separar el título del párrafo */
+}
+
+.servidor-info p {
+  font-size: 16px; /* Tamaño de fuente para el párrafo */
+}
+
+/* Estilos para el contenedor de servidor-items */
+.servidor-items {
+  text-align: center;
+  background-color: rgba(32, 32, 32, 0.60); /* Fondo con transparencia */
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px auto;
+  width: 300px; /* Ancho fijo */
+  height: 150px; /* Alto fijo */
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+/* Estilos para el hover del contenedor del servidor-items que aparece cuando click en otros servidores */
+.servidor-items:hover {
+  background:linear-gradient(to bottom, #585858, #050505); /* Cambia el color de fondo en hover */
+  color: #009dff; /* Cambia el color del texto en hover a blanco */
+}
+
+/* Estilos para el contenido dentro del contenedor del servidor */
+.servidor-items h3 {
+  font-size: 24px; /* Tamaño de fuente para el título */
+  margin-bottom: 10px; /* Espaciado inferior para separar el título del párrafo */
+}
+
+.servidor-items p {
+  font-size: 16px; /* Tamaño de fuente para el párrafo */
+}
+
+/*ESTILOS DEL FORM PARA CREAR SERVIDORES*/
+
+/* Estilos para el formulario */
+.custom-form {
+  background-color: rgba(32, 32, 32, 0.60); /* Fondo con transparencia */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px; /* Establece el ancho máximo del formulario */
+  margin: 40% auto; /* Centra horizontalmente en el main-content */
+  display: flex;
+  flex-direction: column; /* Apila los elementos verticalmente */
+  justify-content: normal; /* Centra verticalmente en el main-content */
+  height: 50%; /* Ocupa todo el alto disponible en el main-content */
+  width: 100%;
+  grid-column: 2; /* Ubica el formulario en la segunda columna */
+  grid-row: 1; /* Ubica el formulario en la primera fila */
+}
+
+.custom-form h2 {
+  color: #ffffff;
+  margin-top: 10%;
+  margin-bottom: 10%;
+
+}
+.custom-form input {
+  width: 95%;
+  padding: 10px ;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.custom-form button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.custom-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo base para los botones OTROS SERVIDORES */
+.servidor-items button {
+  padding: 5px 10px;
+  background-color: #007bff; /* Cambia este color según tu preferencia */
+  color: #fff; /* Cambia el color del texto según tu preferencia */
+  border: none;
+  border-radius: 5px; /* Agrega bordes redondeados */
+  cursor: pointer;
+  transition: background-color 0.2s ease; /* Transición suave del color de fondo */
+}
+
+/* Estilo de hover para los botones */
+.servidor-items button:hover {
+  background-color: #0056b3; /* Cambia este color según tu preferencia */
+}
+/* Estilo base para los botones de MIS SERVIDORES */
+.servidor-info button {
+  padding: 5px 10px;
+  background-color: #007bff; /* Cambia este color según tu preferencia */
+  color: #fff; /* Cambia el color del texto según tu preferencia */
+  border: none;
+  border-radius: 5px; /* Agrega bordes redondeados */
+  cursor: pointer;
+  transition: background-color 0.2s ease; /* Transición suave del color de fondo */
+}
+
+/* Estilo de hover para los botones */
+.servidor-info button:hover {
+  background-color: #0056b3; /* Cambia este color según tu preferencia */
+}
+
+
+/* Estilos para el nuevo sidebar de canales */
+
+.canales-sidebar {
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo con transparencia */
+  color: #ffffff;
+  width: 250px;
+  min-height: 92%;
+  padding: 20px;
+  box-shadow: 2px 0px 5px 0px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 6px;
+  text-align: center;
+  position: relative; /* Para que el posicionamiento absoluto funcione */
+  
+  
+}
+.contenedorCanales{
+  /* Agrega scroll vertical */
+  overflow-y: auto;
+  /* Especifica una altura máxima para activar el scroll */
+  max-height: 50vh; /* Puedes ajustar el valor según tus necesidades */
+}
+.canales-sidebar h2 {
+  /* Estilos para el título "Canales" */
+  margin-bottom: 20px;
+}
+
+.canales-sidebar.sidebar-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  position: absolute;
+  bottom: 0; /* Colocar los iconos en la parte inferior */
+}
+
+.canales-sidebar.server-icon,
+.canales-sidebar.add-server-icon {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  flex-direction: column;
+  margin-top: 10px; /* Espacio entre los iconos y el título */
+}
+
+/*--------------------------------------------------*/
+
+.server-icon,
+  .add-canales-icon {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    flex-direction: column;
+  }
+  
+  .server-icon img,
+  .add-canales-icon img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+  
+  .server-icon:hover,
+  .add-canales-icon:hover {
+    background-color: #6b065a;
+    border-radius: 5px;
+    color: #fff;
+  }
+  
+  .canales-salir,
+  .add-canales-icon2 {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    flex-direction: column;
+  }
+  
+  .canales-salir img,
+  .add-canales-salir img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    margin-top: 20px;
+  }
+  
+  .canales-salir:hover,
+  .add-canales-icon2:hover {
+    background-color: #6b065a;
+    border-radius: 5px;
+    color: #fff;
+  }
+
+
+/* Estilos para la lista de los canales */
+.canal {
+  padding: 5px 10px; /* Reducir el padding vertical */
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Transición suave del color de fondo */
+  height: 30px; /* Reducir la altura */
+  line-height: 30px; /* Alinear verticalmente el contenido */
+}
+.canal h4{
+  margin: 0px;
+  color:#050505;
+}
+
+/* Estilos para el hover */
+.canal:hover {
+  background-color: #f0f0f0; /* Cambia el color de fondo al pasar el mouse sobre el canal */
+}
